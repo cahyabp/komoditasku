@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
@@ -9,11 +10,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-black text-white mx-auto flex h-24 max-w-[100%] items-center justify-between bg-primary px-4">
+    <div className="mx-auto flex h-24 max-w-[100%] items-center justify-between bg-black bg-primary px-4 text-white">
       <h1 className="text-3xl font-bold text-[#EEF2E6]">Komoditasku</h1>
       <ul className="hidden text-[#EEF2E6] md:flex">
         <li className="p-4">
-          <a href=" ">Beranda</a>
+          <Link to={"/"}>Beranda</Link>
         </li>
         <li className="p-4">
           <a href="#tabel-harga">Tabel Harga</a>
@@ -22,7 +23,7 @@ const Navbar = () => {
           <a href="#informasi">Informasi</a>
         </li>
         <li className="p-4">
-          <a href="tentang-kami">Tentang Kami</a>
+          <Link to={"/about-us"}>Tentang Kami</Link>
         </li>
       </ul>
       <div onClick={handleNav} className="block md:hidden">

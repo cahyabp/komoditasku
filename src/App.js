@@ -1,19 +1,40 @@
 import React from "react";
 import Navbar from "./component/Navbar";
-import Hero from "./component/Hero";
-import TabelHarga from "./component/TabelHarga";
 import Footer from "./component/Footer";
-import Blog from "./component/Blog";
+import { Home } from "./pages/Home";
+import { AboutUs } from "./pages/about-us";
+import { Admin } from "./pages/admin";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
+  const paths = [
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/about-us",
+      element: <AboutUs />,
+    },
+    {
+      path: "/admin",
+      element: <Admin />,
+    },
+  ];
   return (
-    <div>
-      <Navbar/>
-      <Hero/>
-      <TabelHarga/>
-      <Blog />
-      <Footer/> 
-    </div>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Routes>
+          {paths.map((item, index) => (
+            <Route key={index} {...item} />
+          ))}
+        </Routes>
+        <Footer />
+      </main>
+    </>
   );
 }
 
