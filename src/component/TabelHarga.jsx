@@ -64,8 +64,8 @@ function TabelHarga() {
 
         {isFilter ? (
           <div className=" flex  items-center justify-end gap-4">
-            <button className="bg-white p-3">Bintang</button>
-            <button className="bg-white p-3">Nicko</button>
+            <button className="bg-white p-3">Komoditi</button>
+            <button className="bg-white p-3">Wilayah</button>
           </div>
         ) : null}
 
