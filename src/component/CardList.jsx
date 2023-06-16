@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import data from "../component/data";
 import { useNavigate } from "react-router-dom";
 
-const Event = () => {
+const Post = () => {
   const [count, setCount] = useState(3);
   const navigate = useNavigate();
 
@@ -15,10 +15,12 @@ const Event = () => {
   };
 
   return (
-    <div name="event" className="mx-auto max-w-[1240px] items-center px-5">
-      <h1 className="pb-5 pt-28 text-center text-5xl font-bold">
-        Berita Terkini
-      </h1>
+    <div
+      id="Post"
+      name="event"
+      className="mx-auto h-full max-w-[1240px] items-center px-5 py-20"
+    >
+      <h1 className="pb-5 text-center text-5xl font-bold">Berita Terkini</h1>
       <div className="mx-auto flex justify-between">
         <div
           data-aos-offset="400"
@@ -55,7 +57,7 @@ const Event = () => {
       </div>
       <div className="flex flex-row justify-center gap-2 pt-10">
         <button
-          className="items-center rounded-md bg-[#007936] px-7 py-3 text-center"
+          className="items-center rounded-md bg-primary px-7 py-3 text-center text-white"
           onClick={() => toggleLoadMore()}
         >
           <p>{count === 3 ? "Show More" : "More Less"}</p>
@@ -65,4 +67,4 @@ const Event = () => {
   );
 };
 
-export default Event;
+export default Post;

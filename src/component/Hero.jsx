@@ -3,7 +3,7 @@ import vectorHero from "../assets/img/vector-hero.png";
 
 function Hero() {
   return (
-    <section className="my-8 bg-transparent text-gray-100">
+    <section className="my-8 h-full bg-transparent text-gray-100">
       <div className="container mx-auto flex flex-col justify-center p-6 sm:py-12 lg:flex-row lg:justify-between lg:py-24">
         <div className="xl:h-112 2xl:h-128 mt-8 flex h-72 items-center justify-center p-6 sm:h-80 lg:mt-0 lg:h-96">
           <img

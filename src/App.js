@@ -34,8 +34,10 @@ function App() {
           ))}
           <Route path="/Detail" element={<Detail />} />
         </Routes>
-        <Footer />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

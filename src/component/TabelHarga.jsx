@@ -33,9 +33,12 @@ function TabelHarga() {
   };
 
   return (
-    <div className="container mx-auto">
-      <div className="flex flex-col items-end justify-end gap-8 ">
-        <div className=" flex  items-start justify-end gap-2">
+    <div
+      id="TabelHarga"
+      className="container mx-auto max-h-full max-w-full bg-primary py-20"
+    >
+      <div className="flex flex-col items-end justify-end gap-8">
+        <div className="flex items-start justify-end gap-2 ">
           <div className="relative max-w-xs">
             <label htmlFor="hs-table-search" className="sr-only">
               Search
@@ -55,7 +58,7 @@ function TabelHarga() {
           </div>
           <button
             onClick={handleFilter}
-            className="flex items-center justify-center gap-3 rounded-md bg-primary px-3 py-2 text-white "
+            className="flex items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-black "
           >
             <div>{!isFilter ? <LuFilter /> : <LuFilterX />}</div>
             Filter
@@ -63,7 +66,7 @@ function TabelHarga() {
         </div>
 
         {isFilter ? (
-          <div className=" flex  items-center justify-end gap-4">
+          <div className="flex items-center justify-end gap-4 ">
             <button className="bg-white p-3">Komoditi</button>
             <button className="bg-white p-3">Wilayah</button>
           </div>
@@ -77,7 +80,7 @@ function TabelHarga() {
                   return (
                     <th
                       scope="col"
-                      className="px-6 py-3 text-center text-xs font-bold uppercase text-gray-500 "
+                      className="px-6 py-3 text-center text-xs font-bold uppercase text-black "
                     >
                       {data}
                     </th>
@@ -87,7 +90,7 @@ function TabelHarga() {
                   <th
                     id={index}
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-bold uppercase text-gray-500 "
+                    className="px-6 py-3 text-left text-xs font-bold uppercase text-black "
                   >
                     {data}
                   </th>
@@ -98,7 +101,7 @@ function TabelHarga() {
           <tbody className="divide-y divide-gray-200">
             {tableData.map((data) => {
               return (
-                <tr id={data.id}>
+                <tr id={data.id} className="bg-slate-300">
                   <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                     {data.id}
                   </td>
