@@ -1,31 +1,11 @@
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { LuFilter, LuFilterX } from "react-icons/lu";
+import { data } from "../Data";
 
 function TabelHarga() {
   const [isFilter, setIsFilter] = useState(false);
-
-  const tableData = [
-    {
-      id: 1,
-      komoditi: "Beras",
-      wilayah: "Bandung",
-      Harga: 15000,
-    },
-    {
-      id: 2,
-      komoditi: "Beraaaas",
-      wilayah: "Bandung",
-      Harga: 100000,
-    },
-    {
-      id: 3,
-      komoditi: "B222eras",
-      wilayah: "Bandung",
-      Harga: 100000,
-    },
-  ];
-
+  const [search, setSearch] = useState('');
   const tableHead = ["No", "Komoditi", "Wilayah", "Harga"];
 
   const handleFilter = () => {
@@ -53,6 +33,7 @@ function TabelHarga() {
                 id="hs-table-search"
                 className="focus-visible:outline-none"
                 placeholder="Search..."
+                onChange={(e) => setSearch(e.target.value)}
               />
             </div>
           </div>
@@ -99,24 +80,27 @@ function TabelHarga() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {tableData.map((data) => {
-              return (
-                <tr id={data.id} className="bg-slate-300">
+            {data.filter((item) => {
+              return search.toLowerCase() === ''
+              ? item
+              : item.name.toLowerCase().includes(search);   
+          })
+          .map((item, index) => (
+                <tr key={index} className="bg-slate-300">
                   <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                    {data.id}
+                    {item.id}
                   </td>
                   <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
-                    {data.komoditi}
+                    {item.komoditas}
                   </td>
                   <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
-                    {data.wilayah}
+                    {item.name}
                   </td>
                   <td className="whitespace-nowrap px-6 py-4 text-center text-sm font-medium">
-                    Rp. {data.Harga}
+                     {item.display}
                   </td>
                 </tr>
-              );
-            })}
+            ))}
           </tbody>
         </table>
       </div>
