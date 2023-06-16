@@ -10,7 +10,7 @@ function TabelHarga() {
       id: 1,
       komoditi: "Beras",
       wilayah: "Bandung",
-      Harga: 100000,
+      Harga: 200000,
     },
     {
       id: 2,
