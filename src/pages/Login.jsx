@@ -5,10 +5,10 @@ const Login = () => {
   return (
     <div className="relative h-screen w-full bg-zinc-900/90">
       <img
-        className="absolute w-full"
-        onScroll={BgLogin}
+        className="cover-fill absolute max-h-full w-full"
+        src={BgLogin}
         alt="backgroundLogin"
-      ></img>
+      />
     </div>
   );
 };

@@ -17,10 +17,10 @@ const Navbar = () => {
           <Link to={"/"}>Beranda</Link>
         </li>
         <li className="p-4">
-          <a href="#tabel-harga">Tabel Harga</a>
+          <a href="#TabelHarga">Tabel Harga</a>
         </li>
         <li className="p-4">
-          <a href="#informasi">Informasi</a>
+          <a href="#Post">Informasi</a>
         </li>
         <li className="p-4">
           <Link to={"/about-us"}>Tentang Kami</Link>
