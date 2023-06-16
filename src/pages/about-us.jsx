@@ -65,7 +65,7 @@ const AboutUs = () => {
             </h5>
             <p class="mb-6">Frontend Developer</p>
             <ul class="mx-auto flex list-inside justify-center">
-              <a href="#!" class="px-2">
+              <a href="https://github.com/ZakiYoga" class="px-2">
                 {/* <!-- GitHub --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ const AboutUs = () => {
                   />
                 </svg>
               </a>
-              <a href="#!" class="px-2">
+              <a href="https://www.linkedin.com/in/zaki-satria-prayoga/" class="px-2">
                 {/* <!-- Linkedin --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ const AboutUs = () => {
             </h5>
             <p class="mb-6">Frontend Developer</p>
             <ul class="mx-auto flex list-inside justify-center">
-              <a href="#!" class="px-2">
+              <a href="https://github.com/cahyabp" class="px-2">
                 {/* <!-- GitHub --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +118,7 @@ const AboutUs = () => {
                   />
                 </svg>
               </a>
-              <a href="#!" class="px-2">
+              <a href="https://www.linkedin.com/in/cahya-bintang-pamungkas/" class="px-2">
                 {/* <!-- Linkedin --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +145,7 @@ const AboutUs = () => {
             </h5>
             <p class="mb-6">Backend Developer</p>
             <ul class="mx-auto flex list-inside justify-center">
-              <a href="#!" class="px-2">
+              <a href="https://github.com/nemzave" class="px-2">
                 {/* <!-- GitHub --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +158,7 @@ const AboutUs = () => {
                   />
                 </svg>
               </a>
-              <a href="#!" class="px-2">
+              <a href="https://www.linkedin.com/in/nanda-ilham-32a502279/" class="px-2">
                 {/* <!-- Linkedin --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -185,7 +185,7 @@ const AboutUs = () => {
             </h5>
             <p class="mb-6">Backend Developer</p>
             <ul class="mx-auto flex list-inside justify-center">
-              <a href="#!" class="px-2">
+              <a href="https://github.com/alfianwb2001" class="px-2">
                 {/* <!-- GitHub --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -198,7 +198,7 @@ const AboutUs = () => {
                   />
                 </svg>
               </a>
-              <a href="#!" class="px-2">
+              <a href="https://www.linkedin.com/in/alfian-nur-wibowo-664843279/" class="px-2">
                 {/* <!-- Linkedin --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

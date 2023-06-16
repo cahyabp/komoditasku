@@ -8,10 +8,7 @@ function Footer() {
         <div className="pt-2 ">
           <h3 className="text-lg font-bold">Komoditasku</h3>
           <p className="ml-9 mr-16 pb-3 pt-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            pariatur aliquid reprehenderit enim unde omnis ipsum deserunt at.
-            Necessitatibus accusamus eveniet provident maiores voluptates vitae
-            reiciendis molestias libero nihil! Recusandae?
+          Komoditasku adalah sebuah website yang menyediakan informasi terbaru mengenai harga komoditas di Indonesia. Website ini dirancang untuk membantu pengguna dalam memperoleh data harga terkini untuk komoditas pangan.
           </p>
           <div className="mb-9 mt-12 flex justify-center">
             <a
