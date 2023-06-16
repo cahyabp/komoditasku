@@ -18,33 +18,32 @@ const Post = () => {
     <div
       id="Post"
       name="event"
-      className="mx-auto h-full max-w-[1240px] items-center px-5 py-20"
+      className="mx-auto max-h-full max-w-[1240px] items-center px-5 py-20"
     >
       <h1 className="pb-5 text-center text-5xl font-bold">Berita Terkini</h1>
       <div className="mx-auto flex justify-between">
         <div
-          data-aos-offset="400"
-          data-aos="fade-up"
+          data-aos="fade-down"
           className="grid items-center gap-4 pt-2 sm:grid-cols-2 md:grid-cols-3"
         >
           {data.cardData.map((item, index) => {
             if (index < count) {
               return (
                 <div
-                  class="relative max-w-[1240px] overflow-hidden rounded-lg border border-gray-200 shadow"
+                  className="relative max-w-[1240px] overflow-hidden rounded-lg border border-gray-200 shadow transition ease-in-out"
                   key={index}
                   onClick={() => handleClickDetail()}
                 >
                   <a href="#">
                     <img
-                      class="h-full w-full rounded-t-lg object-cover opacity-75"
+                      className="h-full w-full rounded-t-lg object-cover opacity-75"
                       src={item.img}
                       alt=""
                     />
                   </a>
-                  <div class="absolute bottom-0 w-full bg-black bg-opacity-50">
+                  <div className="absolute bottom-0 w-full bg-black bg-opacity-50">
                     <a href="#">
-                      <h5 class="mb-2 py-2 text-center text-xl font-bold tracking-tight text-white">
+                      <h5 className="mb-2 py-2 text-center text-xl font-bold tracking-tight text-white">
                         {item.title}
                       </h5>
                     </a>
