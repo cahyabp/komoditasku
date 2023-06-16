@@ -46,12 +46,12 @@ function TabelHarga() {
           </button>
         </div>
 
-        {isFilter ? (
+        {/* {isFilter ? (
           <div className="flex items-center justify-end gap-4 ">
             <button className="bg-white p-3">Komoditi</button>
             <button className="bg-white p-3">Wilayah</button>
           </div>
-        ) : null}
+        ) : null} */}
 
         <table className="w-full divide-y divide-gray-200 ">
           <thead className="bg-gray-50">
@@ -83,7 +83,9 @@ function TabelHarga() {
             {data.filter((item) => {
               return search.toLowerCase() === ''
               ? item
-              : item.name.toLowerCase().includes(search);   
+              : item.komoditas.toLowerCase().includes(search)
+              ? item
+              : item.name.toLowerCase().includes(search);      
           })
           .map((item, index) => (
                 <tr key={index} className="bg-slate-300">
