@@ -18,6 +18,38 @@ function TabelHarga() {
     setIsFilter(!isFilter);
   };
 
+  const getPageNumbers = () => {
+    let pageNumbers = [];
+    if (npage <= 5) {
+      pageNumbers = numbers;
+    } else {
+      if (currentPage <= 3) {
+        pageNumbers = numbers.slice(0, 5);
+        pageNumbers.push("...");
+        pageNumbers.push(npage);
+      } else if (currentPage >= npage - 2) {
+        pageNumbers = [1, "..."];
+        pageNumbers = pageNumbers.concat(numbers.slice(npage - 4, npage + 1));
+      } else {
+        pageNumbers = pageNumbers.concat(
+          numbers.slice(currentPage - 2, currentPage + 3)
+        );
+        pageNumbers.push("...");
+        pageNumbers.push(npage);
+      }
+    }
+    return pageNumbers;
+  };
+
+  // table pagination
+  const [currentPage, setCurrentPage] = useState(true);
+  const recordsPerPage = 5;
+  const lastIndex = currentPage * recordsPerPage;
+  const firstIndex = lastIndex - recordsPerPage;
+  const records = data.slice(firstIndex, lastIndex);
+  const npage = Math.ceil(data.length / recordsPerPage);
+  const numbers = [...Array(npage + 1).keys()].slice(true);
+
   return (
     <div
       id="TabelHarga"
@@ -134,8 +166,8 @@ function TabelHarga() {
           </div>
         ) : null}
 
-        <table className="w-full divide-y divide-gray-200 ">
-          <thead className="bg-gray-50">
+        <table className="table w-full divide-y divide-gray-200 ">
+          <thead className="bg-gray-400">
             <tr>
               {tableHead.map((data, index) => {
                 if (data === "Harga") {
@@ -161,7 +193,7 @@ function TabelHarga() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {data
+            {records
               .filter((item) => {
                 return search.toLowerCase() === ""
                   ? item
@@ -185,9 +217,59 @@ function TabelHarga() {
               ))}
           </tbody>
         </table>
+        <nav className="flex w-full justify-center">
+          <ul className="flex space-x-2">
+            <li className="inline-block">
+              <a
+                href="#TabelHarga"
+                onClick={prePage}
+                className="rounded-md bg-gray-200 px-2 py-1 hover:bg-gray-300"
+              >
+                Prev
+              </a>
+            </li>
+            {getPageNumbers().map((n, i) => (
+              <li className="inline-block" key={i}>
+                <a
+                  href="#TabelHarga"
+                  className={
+                    n === currentPage
+                      ? "rounded-md bg-gray-500 px-2 py-1 text-white"
+                      : "rounded-md bg-gray-200 px-2 py-1 hover:bg-gray-300"
+                  }
+                  onClick={() => changeCPage(n)}
+                >
+                  {n}
+                </a>
+              </li>
+            ))}
+            <li className="inline-block">
+              <a
+                href="#TabelHarga"
+                onClick={nextPage}
+                className="rounded-md bg-gray-200 px-2 py-1 hover:bg-gray-300"
+              >
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   );
+  function prePage() {
+    if (currentPage !== firstIndex) {
+      setCurrentPage(currentPage - 1);
+    }
+  }
+  function changeCPage(id) {
+    setCurrentPage(id);
+  }
+  function nextPage() {
+    if (currentPage !== lastIndex) {
+      setCurrentPage(currentPage + 1);
+    }
+  }
 }
 
 export default TabelHarga;
