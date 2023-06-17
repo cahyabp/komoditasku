@@ -52,6 +52,8 @@ function TabelHarga() {
 
   return (
     <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="center-bottom"
       id="TabelHarga"
       className="container mx-auto max-h-full max-w-full bg-primary py-20"
     >

@@ -2,10 +2,12 @@ import React from "react";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import { Home } from "./pages/Home";
+import { Admin } from "./pages/admin";
+
 import AboutUs from "./pages/about-us";
 import Login from "./pages/Login";
 import Detail from "./component/Detail";
-import { Admin } from "./pages/admin";
+import Dashboard from "./pages/dashboard";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -25,6 +27,10 @@ function App() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/dashboard",
+      element: <Dashboard />,
     },
   ];
   return (

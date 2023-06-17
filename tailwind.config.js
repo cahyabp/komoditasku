@@ -12,6 +12,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'bg-login': "url('/public/bg-login.jpg')",
+      },
       colors: {
         primary: "#1C6758",
         secondary: "#3D8361",
