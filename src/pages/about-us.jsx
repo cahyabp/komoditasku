@@ -1,51 +1,68 @@
 import React from "react";
+import Cahya from "../assets/img/Cahya Bintang.jpg";
+import Nanda from "../assets/img/nanda.jpg";
+import Alfian from "../assets/img/alfian.jpg";
 
 const AboutUs = () => {
   return (
-    <div class="container mx-auto my-24 md:px-6">
-      <section class="mb-32 text-center">
-        <div class="flex justify-center">
-          <div class="max-w-[700px] text-center">
-            <h2 class="mb-6 text-center text-3xl font-bold">KOMODITASKU</h2>
-            <p class="mb-16 text-gray-600">
-              Komoditasku adalah sebuah website yang menyediakan informasi
-              terbaru mengenai harga komoditas di Indonesia. Website ini
-              dirancang untuk membantu pengguna dalam memperoleh data harga
-              terkini untuk komoditas pangan. <br />
-              <br /> Fungsi utama dari Komoditasku adalah memberikan akses mudah
-              dan cepat kepada pengguna untuk memantau dan membandingkan harga
-              komoditas di pasar. Pengguna dapat mencari komoditas spesifik yang
-              mereka minati, seperti harga beras, gula atau minyak. <br />
-              <br />
-              Berikut adalah beberapa fitur yang ditawarkan oleh Komoditasku:
-              <br />
-              1. Data Harga Terbaru: Komoditasku menyediakan informasi harga
-              terkini dari berbagai sumber tepercaya. Data ini diperbarui secara
-              rutin sehingga pengguna dapat mengandalkan informasi yang akurat
-              dan mutakhir.
-              <br /> 2. Filter dan Pencarian: Pengguna dapat menggunakan fitur
-              filter dan pencarian untuk menemukan komoditas spesifik yang
-              mereka cari. Misalnya, pengguna dapat memfilter hasil berdasarkan
-              komoditi dan wilayah.
-              <br /> 3. Tabel Harga: Komoditasku menyajikan data harga dalam
-              bentuk tabel. Pengguna dapat melihat tren harga dari suatu
-              wilayah, membandingkan harga antara komoditas yang berbeda, dan
-              melakukan analisis sendiri untuk membantu mereka dalam pengambilan
-              keputusan.
-              <br /> 4. Berita dan Informasi Pasar: Selain data harga,
-              Komoditasku juga menyediakan berita dan informasi terkait pasar
-              komoditas di Indonesia. Pengguna dapat mengakses artikel-artikel
-              terbaru tentang perubahan pasar, faktor-faktor yang mempengaruhi
-              harga, dan perkembangan terbaru dalam industri komoditas.
-              <br />
-              <br />
-              Dengan adanya Komoditasku, pengguna dapat mengakses informasi
-              harga komoditas dengan mudah dan dapat mengambil keputusan yang
-              lebih cerdas dalam perdagangan atau kegiatan bisnis mereka.
-              Website ini diharapkan dapat memberikan wawasan yang lebih baik
-              tentang pasar komoditas di Indonesia dan membantu menghubungkan
-              produsen, pedagang, dan konsumen komoditas dengan lebih efisien.
-            </p>
+    <div className="container mx-auto my-20 md:px-6">
+      <section className="mb-32 text-center">
+        <div className="flex justify-center">
+          <div className="max-w-[700px] text-center">
+            <h2 className="mb-6 text-center text-3xl font-bold">KOMODITASKU</h2>
+            <div className="text-left font-semibold">
+              <p className="mb-6 text-gray-600">
+                Komoditasku adalah sebuah website yang menyediakan informasi
+                terbaru mengenai harga komoditas di Indonesia. Website ini
+                dirancang untuk membantu pengguna dalam memperoleh data harga
+                terkini untuk komoditas pangan.
+              </p>
+              <p className="mb-6 text-gray-600">
+                Fungsi utama dari Komoditasku adalah memberikan akses mudah dan
+                cepat kepada pengguna untuk memantau dan membandingkan harga
+                komoditas di pasar. Pengguna dapat mencari komoditas spesifik
+                yang mereka minati, seperti harga beras, gula atau minyak.
+              </p>
+              <p className="mb-2 text-gray-600">
+                Berikut adalah beberapa fitur yang ditawarkan oleh Komoditasku:
+              </p>
+              <ol className="list-inside list-decimal space-y-2 text-gray-600">
+                <li>
+                  Data Harga Terbaru: Komoditasku menyediakan informasi harga
+                  terkini dari berbagai sumber tepercaya. Data ini diperbarui
+                  secara rutin sehingga pengguna dapat mengandalkan informasi
+                  yang akurat dan mutakhir.
+                </li>
+                <li>
+                  Filter dan Pencarian: Pengguna dapat menggunakan fitur filter
+                  dan pencarian untuk menemukan komoditas spesifik yang mereka
+                  cari. Misalnya, pengguna dapat memfilter hasil berdasarkan
+                  komoditi dan wilayah.
+                </li>
+                <li>
+                  Tabel Harga: Komoditasku menyajikan data harga dalam bentuk
+                  tabel. Pengguna dapat melihat tren harga dari suatu wilayah,
+                  membandingkan harga antara komoditas yang berbeda, dan
+                  melakukan analisis sendiri untuk membantu mereka dalam
+                  pengambilan keputusan.
+                </li>
+                <li>
+                  Berita dan Informasi Pasar: Selain data harga, Komoditasku
+                  juga menyediakan berita dan informasi terkait pasar komoditas
+                  di Indonesia. Pengguna dapat mengakses artikel-artikel terbaru
+                  tentang perubahan pasar, faktor-faktor yang mempengaruhi
+                  harga, dan perkembangan terbaru dalam industri komoditas.
+                </li>
+              </ol>
+              <p className="mb-16 mt-6 text-gray-600">
+                Dengan adanya Komoditasku, pengguna dapat mengakses informasi
+                harga komoditas dengan mudah dan dapat mengambil keputusan yang
+                lebih cerdas dalam perdagangan atau kegiatan bisnis mereka.
+                Website ini diharapkan dapat memberikan wawasan yang lebih baik
+                tentang pasar komoditas di Indonesia dan membantu menghubungkan
+                produsen, pedagang, dan konsumen komoditas dengan lebih efisien.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -57,7 +74,7 @@ const AboutUs = () => {
             <img
               class="mx-auto mb-6 w-[150px] rounded-lg shadow-lg dark:shadow-black/20"
               src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).jpg"
-              alt="avatar"
+              alt=""
             />
             <h5 class="mb-4 text-lg font-bold">
               F122XB431 <br />
@@ -78,7 +95,10 @@ const AboutUs = () => {
                   />
                 </svg>
               </a>
-              <a href="https://www.linkedin.com/in/zaki-satria-prayoga/" class="px-2">
+              <a
+                href="https://www.linkedin.com/in/zaki-satria-prayoga/"
+                class="px-2"
+              >
                 {/* <!-- Linkedin --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,8 +116,8 @@ const AboutUs = () => {
           <div class="mb-12 lg:mb-0">
             <img
               class="mx-auto mb-6 w-[150px] rounded-lg shadow-lg dark:shadow-black/20"
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).jpg"
-              alt="avatar"
+              src={Cahya}
+              alt=""
             />
             <h5 class="mb-4 text-lg font-bold">
               F122XB269 <br />
@@ -118,7 +138,10 @@ const AboutUs = () => {
                   />
                 </svg>
               </a>
-              <a href="https://www.linkedin.com/in/cahya-bintang-pamungkas/" class="px-2">
+              <a
+                href="https://www.linkedin.com/in/cahya-bintang-pamungkas/"
+                class="px-2"
+              >
                 {/* <!-- Linkedin --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -136,8 +159,8 @@ const AboutUs = () => {
           <div class="mb-12 md:mb-0">
             <img
               class="mx-auto mb-6 w-[150px] rounded-lg shadow-lg dark:shadow-black/20"
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).jpg"
-              alt="avatar"
+              src={Nanda}
+              alt=""
             />
             <h5 class="mb-4 text-lg font-bold">
               F083XB137 <br />
@@ -158,7 +181,10 @@ const AboutUs = () => {
                   />
                 </svg>
               </a>
-              <a href="https://www.linkedin.com/in/nanda-ilham-32a502279/" class="px-2">
+              <a
+                href="https://www.linkedin.com/in/nanda-ilham-32a502279/"
+                class="px-2"
+              >
                 {/* <!-- Linkedin --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -176,8 +202,8 @@ const AboutUs = () => {
           <div class="mb-12 md:mb-0">
             <img
               class="mx-auto mb-6 w-[150px] rounded-lg shadow-lg dark:shadow-black/20"
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).jpg"
-              alt="avatar"
+              src={Alfian}
+              alt=""
             />
             <h5 class="mb-4 text-lg font-bold">
               F083XB272 <br />
@@ -198,7 +224,10 @@ const AboutUs = () => {
                   />
                 </svg>
               </a>
-              <a href="https://www.linkedin.com/in/alfian-nur-wibowo-664843279/" class="px-2">
+              <a
+                href="https://www.linkedin.com/in/alfian-nur-wibowo-664843279/"
+                class="px-2"
+              >
                 {/* <!-- Linkedin --> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
