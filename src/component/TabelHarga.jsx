@@ -43,7 +43,7 @@ function TabelHarga() {
 
   // table pagination
   const [currentPage, setCurrentPage] = useState(true);
-  const recordsPerPage = 5;
+  const recordsPerPage = 10;
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
   const records = data.slice(firstIndex, lastIndex);
@@ -258,7 +258,7 @@ function TabelHarga() {
     </div>
   );
   function prePage() {
-    if (currentPage !== firstIndex) {
+    if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
     }
   }
@@ -266,7 +266,7 @@ function TabelHarga() {
     setCurrentPage(id);
   }
   function nextPage() {
-    if (currentPage !== lastIndex) {
+    if (currentPage !== npage) {
       setCurrentPage(currentPage + 1);
     }
   }
