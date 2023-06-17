@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <div className="mx-auto flex h-24 max-w-[100%] items-center justify-between bg-primary px-4 text-white">
-      <h1 className="text-3xl font-bold text-[#EEF2E6]">Komoditasku</h1>
+      <h1 className="text-3xl font-bold text-[#EEF2E6]">KomoditasKu</h1>
       <ul className="hidden text-[#EEF2E6] md:flex">
         <li className="p-4">
           <Link to={"/"}>Beranda</Link>
