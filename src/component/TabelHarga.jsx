@@ -12,14 +12,33 @@ function TabelHarga() {
       tabelHarga.scrollIntoView();
     }
   }, []);
+  const [komoditas, getKomoditas] = useState([]);
   const [isFilter, setIsFilter] = useState(false);
   const [search, setSearch] = useState("");
   const tableHead = ["No", "Komoditi", "Wilayah", "Harga"];
   const [isOpenKomoditi, setIsOpenKomoditi] = useState(false);
   const [isOpenWilayah, setIsOpenWilayah] = useState(false);
-
   const [selectedKomoditi, setSelectedKomoditi] = useState("");
   const [selectedWilayah, setSelectedWilayah] = useState("");
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    fetch(data)
+      .then((res) => res.json())
+
+      .then((response) => {
+        console.log(response);
+        getKomoditas(response);
+      });
+  };
+
+  const handleSelectChange = (e) => {
+    console.log(e.target.value);
+    setSelectedKomoditi(e.target.value);
+  };
+
 
   const handleFilter = () => {
     setIsFilter(!isFilter);
@@ -96,6 +115,7 @@ function TabelHarga() {
         {isFilter ? (
           <div className="relative flex w-[50%] justify-end align-top">
             <button
+            onChange={handleSelectChange}
               onClick={() => {
                 setIsOpenKomoditi((prev) => !prev);
                 setIsOpenWilayah(false);
@@ -202,12 +222,33 @@ function TabelHarga() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
+            
             {records
               .filter((item) => {
                 return search.toLowerCase() === ""
                   ? item
-                  : item.name.toLowerCase().includes(search);
+                  : item.name.toLowerCase().includes(search)
+                  ? item
+                  : item.komoditas.toLowerCase().includes(search);   
               })
+           
+                .filter((item) => {
+                  // console.log(value);
+                  if (selectedKomoditi && selectedWilayah) {
+                    return (
+                      (item.komoditas) === (selectedKomoditi) &&
+                      item.name === selectedWilayah
+                    );
+                  } else if (selectedKomoditi) {
+                    return (item.komoditas) === (selectedKomoditi);
+                  } else if (selectedWilayah) {
+                    return item.name === selectedWilayah;
+                  } else {
+                    return true;
+                  }
+                })
+
+                
               .map((item, index) => (
                 <tr key={index} className="bg-slate-300">
                   <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
