@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 import { Home } from "./pages/Home";
-import { Admin } from "./pages/admin";
-
+import TabelHarga from "./component/TabelHarga";
+import Post from "./component/CardList";
 import AboutUs from "./pages/about-us";
 import Login from "./pages/Login";
 import Detail from "./component/Detail";
@@ -21,10 +21,6 @@ function App() {
       element: <AboutUs />,
     },
     {
-      path: "/admin",
-      element: <Admin />,
-    },
-    {
       path: "/login",
       element: <Login />,
     },
@@ -35,13 +31,19 @@ function App() {
   ];
   return (
     <>
+      <header>
+        <Navbar />
+      </header>
       <main>
         <Routes>
           {paths.map((item, index) => (
             <Route key={index} {...item} />
           ))}
           <Route path="/Detail" element={<Detail />} />
+          <Route path="/TabelHarga" element={<TabelHarga />} />
+          <Route path="/Post" element={<Post />} />
         </Routes>
+        <Footer />
       </main>
     </>
   );
