@@ -22,7 +22,7 @@ const Login = () => {
           data-aos-delay="300"
           data-aos-offset="0"
           onSubmit={handleLogin}
-          className="mb-4 rounded-lg bg-white/50 bg-gradient-to-t from-slate-100 px-8 pb-8 pt-6 shadow-md"
+          className="mb-4 rounded-lg bg-white/50 bg-gradient-to-t from-slate-100 px-8 pb-8 pt-6 shadow-md shadow-black"
         >
           <h2 className="mb-6 text-center text-2xl font-bold">Login</h2>
           <div className="mb-4">

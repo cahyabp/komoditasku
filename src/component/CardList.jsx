@@ -16,14 +16,16 @@ const Post = () => {
 
   return (
     <div
-      data-aos="fade-down"
       id="Post"
       name="event"
       className="mx-auto max-h-full max-w-[1240px] items-center px-5 py-20"
     >
       <h1 className="pb-5 text-center text-5xl font-bold">Berita Terkini</h1>
       <div className="mx-auto flex justify-between">
-        <div className="grid items-center gap-4 pt-2 sm:grid-cols-2 md:grid-cols-3">
+        <div
+          data-aos="fade-down"
+          className="grid items-center gap-4 pt-2 sm:grid-cols-2 md:grid-cols-3 "
+        >
           {data.cardData.map((item, index) => {
             if (index < count) {
               return (

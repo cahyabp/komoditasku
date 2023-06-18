@@ -35,9 +35,6 @@ function App() {
   ];
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
       <main>
         <Routes>
           {paths.map((item, index) => (
@@ -46,9 +43,6 @@ function App() {
           <Route path="/Detail" element={<Detail />} />
         </Routes>
       </main>
-      <footer>
-        <Footer />
-      </footer>
     </>
   );
 }
