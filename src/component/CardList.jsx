@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "../component/data";
 import { useNavigate } from "react-router-dom";
 
 const Post = () => {
+  useEffect(() => {
+    if (window.location.hash === "#Post") {
+      const tabelHarga = document.getElementById("Post");
+      tabelHarga.scrollIntoView();
+    }
+  }, []);
   const [count, setCount] = useState(3);
   const navigate = useNavigate();
 

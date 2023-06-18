@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
 import { LuFilter, LuFilterX } from "react-icons/lu";
 import { AiOutlineCaretUp, AiOutlineCaretDown } from "react-icons/ai";
 import { data } from "../Data";
 
 function TabelHarga() {
+  //Scolled down to id TabelHarga
+  useEffect(() => {
+    if (window.location.hash === "#TabelHarga") {
+      const tabelHarga = document.getElementById("TabelHarga");
+      tabelHarga.scrollIntoView();
+    }
+  }, []);
   const [isFilter, setIsFilter] = useState(false);
   const [search, setSearch] = useState("");
   const tableHead = ["No", "Komoditi", "Wilayah", "Harga"];
