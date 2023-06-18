@@ -17,10 +17,10 @@ const Navbar = () => {
           <Link to={"/"}>Beranda</Link>
         </li>
         <li className="p-4">
-          <a href="#TabelHarga">Tabel Harga</a>
+          <a href={"/TabelHarga"}>Tabel Harga</a>
         </li>
         <li className="p-4">
-          <a href="#Post">Informasi</a>
+          <a href={"/Post"}>Informasi</a>
         </li>
         <li className="p-4">
           <Link to={"/about-us"}>Tentang Kami</Link>
@@ -41,16 +41,16 @@ const Navbar = () => {
         </h1>
         <ul className="pt-24 uppercase ">
           <li className="border-b border-gray-50 p-4">
-            <a href=" ">Beranda</a>
+            <a href={"/"}>Beranda</a>
           </li>
           <li className="border-b border-gray-50 p-4">
-            <a href="#tabel-harga">Tabel Harga</a>
+            <a href={"/TabelHarga"}>Tabel Harga</a>
           </li>
           <li className="border-b border-gray-50 p-4">
-            <a href="#informasi">Informasi</a>
+            <a href={"/Post"}>Informasi</a>
           </li>
           <li className="border-b border-gray-50 p-4">
-            <a href="tentang-kami">Tentang Kami</a>
+            <a href={"/about-us"}>Tentang Kami</a>
           </li>
         </ul>
       </div>
