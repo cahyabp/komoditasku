@@ -2,6 +2,7 @@ import React from "react";
 import Cahya from "../assets/img/Cahya Bintang.jpg";
 import Nanda from "../assets/img/nanda.jpg";
 import Alfian from "../assets/img/alfian.jpg";
+import Zaki from "../assets/img/Zaki.jpg";
 
 const AboutUs = () => {
   return (
@@ -72,8 +73,8 @@ const AboutUs = () => {
         <div class="lg:gap-xl-12 grid gap-x-6 md:grid-cols-2 lg:grid-cols-4">
           <div class="mb-12 lg:mb-0">
             <img
-              class="mx-auto mb-6 w-[150px] rounded-lg shadow-lg dark:shadow-black/20"
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).jpg"
+              class="mx-auto mb-6 h-[150px] w-[150px] rounded-lg object-cover shadow-lg"
+              src={Zaki}
               alt=""
             />
             <h5 class="mb-4 text-lg font-bold">
@@ -115,7 +116,7 @@ const AboutUs = () => {
           </div>
           <div class="mb-12 lg:mb-0">
             <img
-              class="mx-auto mb-6 w-[150px] rounded-lg shadow-lg dark:shadow-black/20"
+              class="mx-auto mb-6 h-[150px] w-[150px] rounded-lg object-cover shadow-lg"
               src={Cahya}
               alt=""
             />
@@ -158,7 +159,7 @@ const AboutUs = () => {
           </div>
           <div class="mb-12 md:mb-0">
             <img
-              class="mx-auto mb-6 w-[150px] rounded-lg shadow-lg dark:shadow-black/20"
+              class="mx-auto mb-6 h-[150px] w-[150px] rounded-lg object-cover shadow-lg"
               src={Nanda}
               alt=""
             />
@@ -201,7 +202,7 @@ const AboutUs = () => {
           </div>
           <div class="mb-12 md:mb-0">
             <img
-              class="mx-auto mb-6 w-[150px] rounded-lg shadow-lg dark:shadow-black/20"
+              class="mx-auto mb-6 h-[150px] w-[150px] rounded-lg object-cover shadow-lg"
               src={Alfian}
               alt=""
             />
