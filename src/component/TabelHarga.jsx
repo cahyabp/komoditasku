@@ -39,47 +39,14 @@ function TabelHarga() {
     setSelectedKomoditi(e.target.value);
   };
 
-
   const handleFilter = () => {
     setIsFilter(!isFilter);
   };
 
-  const getPageNumbers = () => {
-    let pageNumbers = [];
-    if (npage <= 5) {
-      pageNumbers = numbers;
-    } else {
-      if (currentPage <= 3) {
-        pageNumbers = numbers.slice(0, 5);
-        pageNumbers.push("...");
-        pageNumbers.push(npage);
-      } else if (currentPage >= npage - 2) {
-        pageNumbers = [1, "..."];
-        pageNumbers = pageNumbers.concat(numbers.slice(npage - 4, npage + 1));
-      } else {
-        pageNumbers = pageNumbers.concat(
-          numbers.slice(currentPage - 2, currentPage + 3)
-        );
-        pageNumbers.push("...");
-        pageNumbers.push(npage);
-      }
-    }
-    return pageNumbers;
-  };
-
-  // table pagination
-  const [currentPage, setCurrentPage] = useState(true);
-  const recordsPerPage = 10;
-  const lastIndex = currentPage * recordsPerPage;
-  const firstIndex = lastIndex - recordsPerPage;
-  const records = data.slice(firstIndex, lastIndex);
-  const npage = Math.ceil(data.length / recordsPerPage);
-  const numbers = [...Array(npage + 1).keys()].slice(true);
-
   return (
     <div
-      data-aos="fade-up"
-      data-aos-anchor-placement="center-bottom"
+      // data-aos="fade-up"
+      // data-aos-anchor-placement="center-bottom"
       id="TabelHarga"
       className="container mx-auto max-h-full max-w-full bg-primary py-20"
     >
@@ -115,7 +82,7 @@ function TabelHarga() {
         {isFilter ? (
           <div className="relative flex w-[50%] justify-end align-top">
             <button
-            onChange={handleSelectChange}
+              onChange={handleSelectChange}
               onClick={() => {
                 setIsOpenKomoditi((prev) => !prev);
                 setIsOpenWilayah(false);
@@ -131,7 +98,7 @@ function TabelHarga() {
             </button>
 
             {isOpenKomoditi && (
-              <div className="absolute top-[57px] z-[1] w-[48.6%] bg-slate-100">
+              <div className="absolute left-0 top-[57px] z-[1] w-[48.6%] bg-slate-100">
                 {data
                   .filter(
                     (item, index) =>
@@ -194,53 +161,52 @@ function TabelHarga() {
             )}
           </div>
         ) : null}
-
-        <table className="table w-full divide-y divide-gray-200 ">
-          <thead className="bg-gray-400">
-            <tr>
-              {tableHead.map((data, index) => {
-                if (data === "Harga") {
+        <div className="h-[600px] w-full overflow-y-scroll">
+          <table className="table w-full divide-y divide-gray-200 ">
+            <thead className="bg-gray-400">
+              <tr>
+                {tableHead.map((data, index) => {
+                  if (data === "Harga") {
+                    return (
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-center text-xs font-bold uppercase text-black "
+                      >
+                        {data}
+                      </th>
+                    );
+                  }
                   return (
                     <th
+                      id={index}
                       scope="col"
-                      className="px-6 py-3 text-center text-xs font-bold uppercase text-black "
+                      className="px-6 py-3 text-left text-xs font-bold uppercase text-black "
                     >
                       {data}
                     </th>
                   );
-                }
-                return (
-                  <th
-                    id={index}
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-bold uppercase text-black "
-                  >
-                    {data}
-                  </th>
-                );
-              })}
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-200">
-            
-            {records
-              .filter((item) => {
-                return search.toLowerCase() === ""
-                  ? item
-                  : item.name.toLowerCase().includes(search)
-                  ? item
-                  : item.komoditas.toLowerCase().includes(search);   
-              })
-           
+                })}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              {data
+                .filter((item) => {
+                  return search.toLowerCase() === ""
+                    ? item
+                    : item.name.toLowerCase().includes(search)
+                    ? item
+                    : item.komoditas.toLowerCase().includes(search);
+                })
+
                 .filter((item) => {
                   // console.log(value);
                   if (selectedKomoditi && selectedWilayah) {
                     return (
-                      (item.komoditas) === (selectedKomoditi) &&
+                      item.komoditas === selectedKomoditi &&
                       item.name === selectedWilayah
                     );
                   } else if (selectedKomoditi) {
-                    return (item.komoditas) === (selectedKomoditi);
+                    return item.komoditas === selectedKomoditi;
                   } else if (selectedWilayah) {
                     return item.name === selectedWilayah;
                   } else {
@@ -248,78 +214,28 @@ function TabelHarga() {
                   }
                 })
 
-                
-              .map((item, index) => (
-                <tr key={index} className="bg-slate-300">
-                  <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                    {item.id}
-                  </td>
-                  <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
-                    {item.komoditas}
-                  </td>
-                  <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
-                    {item.name}
-                  </td>
-                  <td className="whitespace-nowrap px-6 py-4 text-center text-sm font-medium">
-                    {item.display}
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
-        <nav className="flex w-full justify-center">
-          <ul className="flex space-x-2">
-            <li className="inline-block">
-              <a
-                href="#TabelHarga"
-                onClick={prePage}
-                className="rounded-md bg-gray-200 px-2 py-1 hover:bg-gray-300"
-              >
-                Prev
-              </a>
-            </li>
-            {getPageNumbers().map((n, i) => (
-              <li className="inline-block" key={i}>
-                <a
-                  href="#TabelHarga"
-                  className={
-                    n === currentPage
-                      ? "rounded-md bg-gray-500 px-2 py-1 text-white"
-                      : "rounded-md bg-gray-200 px-2 py-1 hover:bg-gray-300"
-                  }
-                  onClick={() => changeCPage(n)}
-                >
-                  {n}
-                </a>
-              </li>
-            ))}
-            <li className="inline-block">
-              <a
-                href="#TabelHarga"
-                onClick={nextPage}
-                className="rounded-md bg-gray-200 px-2 py-1 hover:bg-gray-300"
-              >
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
+                .map((item, index) => (
+                  <tr key={index} className="bg-slate-300">
+                    <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
+                      {item.id}
+                    </td>
+                    <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
+                      {item.komoditas}
+                    </td>
+                    <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
+                      {item.name}
+                    </td>
+                    <td className="whitespace-nowrap px-6 py-4 text-center text-sm font-medium">
+                      {item.display}
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
-  function prePage() {
-    if (currentPage !== 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  }
-  function changeCPage(id) {
-    setCurrentPage(id);
-  }
-  function nextPage() {
-    if (currentPage !== npage) {
-      setCurrentPage(currentPage + 1);
-    }
-  }
 }
 
 export default TabelHarga;

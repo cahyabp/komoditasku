@@ -37,7 +37,7 @@ const Navbar = () => {
         }
       >
         <h1 className="ml-4 pt-[30px] text-3xl font-bold text-[#EEF2E6] sm:text-sm">
-          Komoditasku
+          KomoditasKu
         </h1>
         <ul className="pt-24 uppercase ">
           <li className="border-b border-gray-50 p-4">
