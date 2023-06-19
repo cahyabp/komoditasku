@@ -28,7 +28,7 @@ function Hero() {
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:items-center sm:justify-center sm:space-x-4 sm:space-y-0 lg:justify-start">
             <a
-              href="/#"
+              href="/#TabelHarga"
               rel="noopener noreferrer"
               className="rounded border bg-primary px-8 py-3 text-lg font-semibold text-white"
             >
